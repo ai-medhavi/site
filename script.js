@@ -12,10 +12,10 @@ function setFaviconAndLogoForTheme(theme) {
     logo.src = theme === 'dark' ? 'assets/logo/logo-black-circle.png' : 'assets/logo/logo-white-circle.png';
   }
   if (heroLogo) {
-    heroLogo.src = theme === 'dark' ? 'assets/hero/medhavi-hero-480-black.png' : 'assets/hero/medhavi-hero-480-white.png';
+    heroLogo.src = theme === 'dark' ? 'assets/hero/medhavi-hero-480-black-1.png' : 'assets/hero/medhavi-hero-480-white-1.png';
     heroLogo.srcset = theme === 'dark'
-      ? 'assets/hero/medhavi-hero-480-black.png 1x, assets/hero/medhavi-hero-960-black.png 2x'
-      : 'assets/hero/medhavi-hero-480-white.png 1x, assets/hero/medhavi-hero-960-white.png 2x';
+      ? 'assets/hero/medhavi-hero-480-black-1.png 1x, assets/hero/medhavi-hero-960-black-1.png 2x'
+      : 'assets/hero/medhavi-hero-480-white-1.png 1x, assets/hero/medhavi-hero-960-white-1.png 2x';
   }
 }
 
