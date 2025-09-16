@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Medhavi-AI — Where ancient wisdom meets the age of intelligence</title>
+  <link rel="icon" href="assets/favicon/favicon-white.ico" />
+  <meta name="description" content="Medhavi-AI — taking AI education to the last mile. On-premise workshops in schools, colleges and institutions." />
+  <style>
+    /* Minimalist black & white theme — responsive improvements */
+    :root{
+      --bg:#ffffff;
+      --fg:#000000;
+      --muted:#444;
+      --accent:#000;
+      --max-width:1100px;
+      --radius:12px;
+      --gap:1.25rem;
+      --header-h:64px;
+      --container-padding:2rem;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background:var(--bg);
+      color:var(--fg);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+      -webkit-text-size-adjust:100%;
+      font-size:clamp(15px, 1.8vw, 18px);
+    }
+    .container{max-width:var(--max-width);margin:0 auto;padding:var(--container-padding);} 
+
+    /* NAVBAR */
+    header{
+      position:fixed;top:0;left:0;width:100%;height:var(--header-h);background:var(--bg);border-bottom:1px solid #eee;z-index:1000;display:flex;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,0.03);
+    }
+    main{padding-top:calc(var(--header-h) + 8px);} /* keep space for fixed header */
+
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:0 1rem;width:100%}
+    .brand{display:flex;align-items:center;gap:.75rem}
+    .brand img{width:44px;height:44px;object-fit:contain;border-radius:8px;border:1px solid #000}
+    .brand h1{font-size:1rem;margin:0;font-weight:700}
+
+    nav ul{list-style:none;display:flex;gap:1.25rem;margin:0;padding:0;align-items:center}
+    nav a{color:var(--fg);text-decoration:none;font-weight:600}
+
+    .nav-toggle{display:none;border:0;background:transparent;font-size:1rem;padding:.5rem}
+
+    /* HERO */
+    .hero{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2.5rem 1rem 3rem;min-height:calc(100vh - var(--header-h));}
+
+    .hero .logo{width:100%;max-width:420px;height:auto;border-radius:20px;margin:0 auto 1.25rem auto;display:flex;align-items:center;justify-content:center;background:transparent}
+    .hero .logo img{width:100%;height:auto;display:block;object-fit:contain}
+
+    .hero h2{font-size:clamp(18px,2.4vw,26px);margin:0 0 .5rem;font-weight:700}
+    .hero p{margin:0 0 1rem;color:var(--muted)}
+
+    .cta{display:flex;gap:.75rem;flex-wrap:wrap;justify-content:center;align-items:center;margin-top:1.25rem}
+    .btn{border:1px solid var(--fg);background:transparent;color:var(--fg);padding:.55rem .9rem;border-radius:8px;font-weight:700;text-decoration:none}
+  .cta{display:flex;gap:.75rem;flex-wrap:wrap;justify-content:center;align-items:center;margin:0.1rem auto 0 auto;}
+    .btn.secondary{background:var(--fg);color:var(--bg)}
+
+    /* WORKSHOPS */
+    .section{padding:2.5rem 0}
+    .section h3{margin:0 0 .5rem;font-size:clamp(18px,1.6vw,20px)}
+    .section p.lead{margin:0 0 1rem;color:var(--muted)}
+
+    .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+    .card{border:1px solid #eee;padding:1.25rem;border-radius:12px;display:flex;flex-direction:column;justify-content:space-between}
+    .card h4{margin:0 0 .5rem}
+    .card small{display:block;color:var(--muted);margin-bottom:.5rem}
+    .who{margin-top:.5rem;color:var(--muted);font-size:.95rem}
+    .who ul{margin:.5rem 0 0;padding-left:1.1rem}
+    .card .card-btn-row{display:flex;justify-content:center;margin-top:1rem}
+
+    /* ABOUT */
+    .about{display:flex;gap:2rem;align-items:flex-start}
+    .about .text{flex:1}
+    .about aside{width:300px;border-left:1px dashed #eee;padding-left:1rem;color:var(--muted)}
+
+    /* FOOTER */
+    footer{border-top:1px solid #eee;padding:2rem 0;margin-top:2rem}
+    .footer-grid{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+
+    /* Small screens */
+    @media (max-width:1000px){
+      :root{--max-width:900px}
+      .about aside{width:260px}
+      .brand img{width:40px;height:40px}
+    }
+
+    @media (max-width:900px){
+      nav ul{display:none}
+      .nav-toggle{display:block}
+      .cards{grid-template-columns:1fr}
+      .about{flex-direction:column}
+      .about aside{width:auto;border-left:0;padding-left:0;border-top:1px dashed #eee;padding-top:1rem}
+      .hero{padding:2rem 1rem}
+      .hero .logo{max-width:320px}
+    }
+
+    @media (max-width:600px){
+      :root{--container-padding:1rem}
+      header{height:56px}
+      main{padding-top:64px}
+      .brand h1{font-size:.95rem}
+      .hero{min-height:calc(70vh - var(--header-h));padding:1.25rem}
+      .hero .logo{max-width:260px;border-radius:14px}
+      .hero h2{font-size:18px}
+      .cta{margin-top:1rem}
+    }
+
+    /* Mobile nav (simple overlay) */
+    .mobile-menu{position:fixed;top:var(--header-h);left:0;right:0;background:var(--bg);border-top:1px solid #eee;display:none;padding:1rem 1rem;z-index:1001}
+    .mobile-menu.open{display:block}
+    .mobile-menu a{display:block;padding:.5rem 0;border-bottom:1px dashed #f1f1f1}
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav container">
+      <div class="brand">
+        <img src="assets/logo/favicon-white-256x256.png" alt="Medhavi-AI logo placeholder" />
+        <h1>Medhavi-AI</h1>
+      </div>
+
+      <nav aria-label="Main navigation">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="primary-menu">☰ Menu</button>
+        <ul id="primary-menu">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#workshops">Workshops</a></li>
+          <li><a href="#about">About Us</a></li>
+
+        </ul>
+      </nav>
+    </div>
+
+    <div id="mobileMenu" class="mobile-menu" aria-hidden="true">
+      <a href="#home">Home</a>
+      <a href="#workshops">Workshops</a>
+      <a href="#about">About Us</a>
+
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero" role="region" aria-label="Hero">
+      <div class="container">
+        <div class="hero-inner">
+          <div class="logo" aria-hidden="true">
+            <!-- responsive srcset for hero -->
+            <img src="assets/hero/medhavi-hero-480.webp" srcset="assets/hero/medhavi-hero-480.webp 1x, assets/hero/medhavi-hero-960.png 2x" sizes="(max-width:600px) 260px, (max-width:900px) 320px, 420px" alt="Medhavi-AI logo"/>
+          </div>
+          <h2>Taking AI education to the last mile — empowering every Indian mind.</h2>
+        </div>
+      </div>
+      <div class="cta">
+        <a class="btn" href="#workshops">Explore Workshops</a>
+        <a class="btn secondary" href="#about">Learn More</a>
+      </div>
+    </section>
+
+    <section id="workshops" class="section">
+      <div class="container">
+        <h3>Our Workshops</h3>
+        <p class="lead">Hands-on AI learning experiences designed for schools, colleges, and institutions.</p>
+        <div class="cards">
+          <!-- Card 1 -->
+          <article class="card" aria-labelledby="w1-title">
+            <small>Path A (2–3 hours)</small>
+            <h4 id="w1-title">Medhavi Quickstart</h4>
+            <p>A hands-on, no-code workshop introducing 30+ AI tools you can use to boost your study, work, and creative projects. Introduction to prompt engineering. Fast, practical, and demo-driven.</p>
+            <div class="who">
+              <strong>Who it’s for:</strong>
+              <ul>
+                <li>Students who want study and productivity tools</li>
+                <li>Professionals who want immediate workplace wins</li>
+                <li>Anyone curious to see how AI fits into daily tasks</li>
+              </ul>
+            </div>
+            <div class="card-btn-row">
+              <a class="btn" href="https://forms.gle/Yjpx6N3x2BV9weZT6" target="_blank" rel="noopener noreferrer">Contact Us</a>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="card" aria-labelledby="w2-title">
+            <small>Path B (4–6 hours)</small>
+            <h4 id="w2-title">Medhavi Foundation</h4>
+            <p>A structured, concept-first course that explains what AI is, how it learns, and why it behaves the way it does — with real examples and practical exercises.</p>
+            <div class="who">
+              <strong>Who it’s for:</strong>
+              <ul>
+                <li>Students preparing for AI-enabled careers</li>
+                <li>Professionals aiming to upskill and make informed decisions</li>
+                <li>Educators and entrepreneurs seeking deeper technical literacy</li>
+              </ul>
+            </div>
+            <div class="card-btn-row">
+              <a class="btn" href="https://forms.gle/Yjpx6N3x2BV9weZT6" target="_blank" rel="noopener noreferrer">Contact Us</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section" aria-labelledby="about-title">
+      <div class="container about">
+        <div id="about-short" class="text">
+          <h3 id="about-title">About Us</h3>
+          <p><strong>Medhavi-AI: Where ancient wisdom meets the age of intelligence.</strong></p>
+          <p>At Medhavi-AI, we believe AI should not be a privilege—it should be accessible to every Indian, in every corner of the country. Our mission is to bridge the gap between timeless wisdom and cutting-edge technology by taking AI education to the last mile.</p>
+          <p>Through on-premise workshops in schools, colleges, and institutions, we make AI practical, relatable, and empowering. Whether in cities, small towns, or rural communities, our goal is to spark curiosity, build confidence, and inspire the next generation to navigate, innovate, and lead in the age of intelligence.</p>
+          <p><a class="btn" href="#" id="read-full-story">Read Full Story</a></p>
+        </div>
+
+        <div id="about-full" style="display:none">
+          <!-- full about content preserved unchanged -->
+          <h3>About Us</h3>
+          <p><strong>Medhavi-AI: Where ancient wisdom meets the age of intelligence.</strong></p>
+          <p>The pursuit of knowledge has always been humanity’s most enduring journey. At Medhavi-AI, we aspire to be the bridge that connects the wisdom of the past with the intelligence of the future. Our mission is simple: to empower every Indian with the insight and confidence to navigate, innovate, and lead in the age of AI.</p>
+          <p>We are committed to reaching the last mile—bringing AI literacy and education to schools, colleges, and communities across India, including smaller towns and rural areas. Our vision is to ensure that no curious mind is left behind in this age of intelligence.</p>
+          <p><strong>Our Name:</strong> <em>medhavi</em> is a Sanskrit word, meaning intelligent, brilliant, or expert.</p>
+          <p><strong>Our Symbolism:</strong></p>
+          <ul style="margin-left:1.2em">
+            <li><strong>The Lotus:</strong> Revered across Hindu and Buddhist traditions, the lotus symbolizes purity, enlightenment, and knowledge—wisdom rising above the noise, untouched yet transformative.</li>
+            <li><strong>The Circuit Board:</strong> Etched within the petals, the circuitry represents modern technology in general and neural networks in particular—the foundation of AI.</li>
+            <li><strong>The Fusion:</strong> Together, they embody our philosophy—the merging of timeless wisdom with cutting-edge technology.</li>
+          </ul>
+          <p><strong>0 and ∞:</strong></p>
+          <ul style="margin-left:1.2em">
+            <li><strong>0 (the beginning, the atom, the Atman):</strong> Our journey starts at Zero. More than just a number, it is Shunya (the void of infinite potential), the Atman (the individual self), the Hiranyagarbha (the cosmic seed) from which all creation springs. It represents the foundational spark of curiosity within you.</li>
+            <li><strong>∞ (the endless, the universe, the Brahman):</strong> Our destiny is Infinity. It symbolizes Brahman (the ultimate, all-encompassing reality), the boundless universe of possibilities that AI unlocks. It reflects the limitless applications and profound impact this technology will have on our world.</li>
+          </ul>
+          <p>Together, 0 and ∞ echo the eternal cycle of learning—where every end is a new beginning.</p>
+          <p><strong>Our Philosophy</strong><br>
+          Inscribed beneath our logo are two profound lines from the Kenopanishad:</p>
+          <blockquote style="margin-left:1.2em">
+            avijnatam vijantam — “(He who thinks) he knows it, does not know it.”<br>
+            vijnatam avijnatam — “(He who realizes) he does not know, truly knows it.”
+          </blockquote>
+          <p>This paradox reminds us that the path to true learning begins with acknowledging the limits of our knowledge. In the vast and rapidly evolving field of AI, this humility is not just a virtue; it is a necessity. We believe mastery is not about having all the answers, but about asking the right questions. Our courses and content are designed not just to transmit information, but to ignite a spirit of inquiry, critical thinking, and lifelong learning.</p>
+          <p><strong>What We Do</strong><br>
+          At Medhavi-AI, we make AI accessible and meaningful. We conduct on-premise workshops in schools, colleges, and institutions, where learners can directly engage with AI in a practical and inspiring way. By meeting people where they are, we bring AI education to the grassroots—filling the last-mile gap and making technology a living part of every learner’s journey toward wisdom and progress.</p>
+        </div>
+      </div>
+    </section>
+
+
+
+  </main>
+
+  <footer>
+    <div style="text-align:center;color:var(--muted);font-size:.9rem;padding:0.5rem 0;">© 2025 Medhavi-AI. All Rights Reserved.</div>
+  </footer>
+
+  <script>
+    // Mobile nav toggle
+    const navToggle = document.querySelector('.nav-toggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menu = document.getElementById('primary-menu');
+    navToggle && navToggle.addEventListener('click', ()=>{
+      const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', String(!expanded));
+      if(mobileMenu) mobileMenu.classList.toggle('open');
+    });
+
+    // Smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', function(e){
+        const target = document.querySelector(this.getAttribute('href'));
+        if(target){
+          e.preventDefault();
+          target.scrollIntoView({behavior:'smooth',block:'start'});
+          // close mobile menu
+          if(window.innerWidth < 900 && mobileMenu) mobileMenu.classList.remove('open');
+        }
+      })
+    })
+
+    // About Us expand/collapse
+    const readFullStory = document.getElementById('read-full-story');
+    if(readFullStory) {
+      readFullStory.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.getElementById('about-short').style.display = 'none';
+        document.getElementById('about-full').style.display = 'block';
+        // scroll into view for better ux on small screens
+        document.getElementById('about-full').scrollIntoView({behavior:'smooth',block:'start'});
+      });
+    }
+
+    // Improve focus outlines for accessibility
+    document.addEventListener('keyup', (e) => {
+      if(e.key === 'Tab') document.documentElement.classList.add('user-is-tabbing');
+    });
+  </script>
+</body>
+</html>
