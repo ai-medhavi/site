@@ -4,128 +4,15 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Medhavi-AI — Where ancient wisdom meets the age of intelligence</title>
-  <link rel="icon" href="assets/favicon/favicon-white.ico" />
+  <link id="favicon" rel="icon" href="assets/favicon/favicon-white-circle.ico" />
   <meta name="description" content="Medhavi-AI — taking AI education to the last mile. On-premise workshops in schools, colleges and institutions." />
-  <style>
-    /* Minimalist black & white theme — responsive improvements */
-    :root{
-      --bg:#ffffff;
-      --fg:#000000;
-      --muted:#444;
-      --accent:#000;
-      --max-width:1100px;
-      --radius:12px;
-      --gap:1.25rem;
-      --header-h:64px;
-      --container-padding:2rem;
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      background:var(--bg);
-      color:var(--fg);
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      line-height:1.5;
-      -webkit-text-size-adjust:100%;
-      font-size:clamp(15px, 1.8vw, 18px);
-    }
-    .container{max-width:var(--max-width);margin:0 auto;padding:var(--container-padding);} 
-
-    /* NAVBAR */
-    header{
-      position:fixed;top:0;left:0;width:100%;height:var(--header-h);background:var(--bg);border-bottom:1px solid #eee;z-index:1000;display:flex;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,0.03);
-    }
-    main{padding-top:calc(var(--header-h) + 8px);} /* keep space for fixed header */
-
-    .nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:0 1rem;width:100%}
-    .brand{display:flex;align-items:center;gap:.75rem}
-    .brand img{width:44px;height:44px;object-fit:contain;border-radius:8px;border:1px solid #000}
-    .brand h1{font-size:1rem;margin:0;font-weight:700}
-
-    nav ul{list-style:none;display:flex;gap:1.25rem;margin:0;padding:0;align-items:center}
-    nav a{color:var(--fg);text-decoration:none;font-weight:600}
-
-    .nav-toggle{display:none;border:0;background:transparent;font-size:1rem;padding:.5rem}
-
-    /* HERO */
-    .hero{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2.5rem 1rem 3rem;min-height:calc(100vh - var(--header-h));}
-
-    .hero .logo{width:100%;max-width:420px;height:auto;border-radius:20px;margin:0 auto 1.25rem auto;display:flex;align-items:center;justify-content:center;background:transparent}
-    .hero .logo img{width:100%;height:auto;display:block;object-fit:contain}
-
-    .hero h2{font-size:clamp(18px,2.4vw,26px);margin:0 0 .5rem;font-weight:700}
-    .hero p{margin:0 0 1rem;color:var(--muted)}
-
-    .cta{display:flex;gap:.75rem;flex-wrap:wrap;justify-content:center;align-items:center;margin-top:1.25rem}
-    .btn{border:1px solid var(--fg);background:transparent;color:var(--fg);padding:.55rem .9rem;border-radius:8px;font-weight:700;text-decoration:none}
-  .cta{display:flex;gap:.75rem;flex-wrap:wrap;justify-content:center;align-items:center;margin:0.1rem auto 0 auto;}
-    .btn.secondary{background:var(--fg);color:var(--bg)}
-
-    /* WORKSHOPS */
-    .section{padding:2.5rem 0}
-    .section h3{margin:0 0 .5rem;font-size:clamp(18px,1.6vw,20px)}
-    .section p.lead{margin:0 0 1rem;color:var(--muted)}
-
-    .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
-    .card{border:1px solid #eee;padding:1.25rem;border-radius:12px;display:flex;flex-direction:column;justify-content:space-between}
-    .card h4{margin:0 0 .5rem}
-    .card small{display:block;color:var(--muted);margin-bottom:.5rem}
-    .who{margin-top:.5rem;color:var(--muted);font-size:.95rem}
-    .who ul{margin:.5rem 0 0;padding-left:1.1rem}
-    .card .card-btn-row{display:flex;justify-content:center;margin-top:1rem}
-
-    /* ABOUT */
-    .about{display:flex;gap:2rem;align-items:flex-start}
-    .about .text{flex:1}
-    .about aside{width:300px;border-left:1px dashed #eee;padding-left:1rem;color:var(--muted)}
-
-    /* FOOTER */
-    footer{border-top:1px solid #eee;padding:2rem 0;margin-top:2rem}
-    .footer-grid{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
-
-    /* Small screens */
-    @media (max-width:1000px){
-      :root{--max-width:900px}
-      .about aside{width:260px}
-      .brand img{width:40px;height:40px}
-    }
-
-    @media (max-width:900px){
-      nav ul{display:none}
-      .nav-toggle{display:block}
-      .cards{grid-template-columns:1fr}
-      .about{flex-direction:column}
-      .about aside{width:auto;border-left:0;padding-left:0;border-top:1px dashed #eee;padding-top:1rem}
-      .hero{padding:2rem 1rem}
-      .hero .logo{max-width:320px}
-    }
-
-    @media (max-width:600px){
-      :root{--container-padding:1rem}
-      header{height:56px}
-      main{padding-top:64px}
-      .brand h1{font-size:.95rem}
-      .hero{min-height:calc(70vh - var(--header-h));padding:1.25rem}
-      .hero .logo{max-width:260px;border-radius:14px}
-      .hero h2{font-size:18px}
-      .cta{margin-top:1rem}
-    }
-
-    /* Mobile nav (simple overlay) */
-    .mobile-menu{position:fixed;top:var(--header-h);left:0;right:0;background:var(--bg);border-top:1px solid #eee;display:none;padding:1rem 1rem;z-index:1001}
-    .mobile-menu.open{display:block}
-    .mobile-menu a{display:block;padding:.5rem 0;border-bottom:1px dashed #f1f1f1}
-
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
     <div class="nav container">
       <div class="brand">
-        <img src="assets/logo/favicon-white-256x256.png" alt="Medhavi-AI logo placeholder" />
+  <img id="navbar-logo" src="assets/logo/logo-white-circle.png" alt="Medhavi-AI logo placeholder" />
         <h1>Medhavi-AI</h1>
       </div>
 
@@ -133,18 +20,18 @@
         <button class="nav-toggle" aria-expanded="false" aria-controls="primary-menu">☰ Menu</button>
         <ul id="primary-menu">
           <li><a href="#home">Home</a></li>
-          <li><a href="#workshops">Workshops</a></li>
-          <li><a href="#about">About Us</a></li>
-
+          <li>
+            <button class="theme-toggle" id="theme-toggle" title="Toggles light & dark" aria-label="auto" aria-live="polite">
+              <svg class="icon-light" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm-.707 10.607a1 1 0 010-1.414l.707-.707a1 1 0 111.414 1.414l-.707.707a1 1 0 01-1.414 0zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+              <svg class="icon-dark" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+            </button>
+          </li>
         </ul>
       </nav>
     </div>
 
     <div id="mobileMenu" class="mobile-menu" aria-hidden="true">
       <a href="#home">Home</a>
-      <a href="#workshops">Workshops</a>
-      <a href="#about">About Us</a>
-
     </div>
   </header>
 
@@ -154,14 +41,14 @@
         <div class="hero-inner">
           <div class="logo" aria-hidden="true">
             <!-- responsive srcset for hero -->
-            <img src="assets/hero/medhavi-hero-480.webp" srcset="assets/hero/medhavi-hero-480.webp 1x, assets/hero/medhavi-hero-960.png 2x" sizes="(max-width:600px) 260px, (max-width:900px) 320px, 420px" alt="Medhavi-AI logo"/>
+            <img id="hero-logo" src="assets/hero/medhavi-hero-480-white.png" srcset="assets/hero/medhavi-hero-480-white.png 1x, assets/hero/medhavi-hero-960-white.png 2x" sizes="(max-width:600px) 260px, (max-width:900px) 320px, 420px" alt="Medhavi-AI logo"/>
           </div>
-          <h2>Taking AI education to the last mile — empowering every Indian mind.</h2>
+          <h2>From curiosity to confidence — your journey in AI starts here.</h2>
         </div>
       </div>
       <div class="cta">
-        <a class="btn" href="#workshops">Explore Workshops</a>
-        <a class="btn secondary" href="#about">Learn More</a>
+        <a class="btn" href="#workshops">Workshops</a>
+        <a class="btn secondary" href="#about">About Us</a>
       </div>
     </section>
 
@@ -216,7 +103,7 @@
           <p><strong>Medhavi-AI: Where ancient wisdom meets the age of intelligence.</strong></p>
           <p>At Medhavi-AI, we believe AI should not be a privilege—it should be accessible to every Indian, in every corner of the country. Our mission is to bridge the gap between timeless wisdom and cutting-edge technology by taking AI education to the last mile.</p>
           <p>Through on-premise workshops in schools, colleges, and institutions, we make AI practical, relatable, and empowering. Whether in cities, small towns, or rural communities, our goal is to spark curiosity, build confidence, and inspire the next generation to navigate, innovate, and lead in the age of intelligence.</p>
-          <p><a class="btn" href="#" id="read-full-story">Read Full Story</a></p>
+          <p><a class="btn" href="#" id="more-info">More info</a></p>
         </div>
 
         <div id="about-full" style="display:none">
@@ -247,6 +134,7 @@
           <p>This paradox reminds us that the path to true learning begins with acknowledging the limits of our knowledge. In the vast and rapidly evolving field of AI, this humility is not just a virtue; it is a necessity. We believe mastery is not about having all the answers, but about asking the right questions. Our courses and content are designed not just to transmit information, but to ignite a spirit of inquiry, critical thinking, and lifelong learning.</p>
           <p><strong>What We Do</strong><br>
           At Medhavi-AI, we make AI accessible and meaningful. We conduct on-premise workshops in schools, colleges, and institutions, where learners can directly engage with AI in a practical and inspiring way. By meeting people where they are, we bring AI education to the grassroots—filling the last-mile gap and making technology a living part of every learner’s journey toward wisdom and progress.</p>
+          <p><a class="btn" href="#" id="less-info">Less info</a></p>
         </div>
       </div>
     </section>
@@ -256,49 +144,20 @@
   </main>
 
   <footer>
+    <div class="footer-socials" style="display:flex;justify-content:center;gap:1.5rem;padding:0.5rem 0 0.2rem 0;">
+      <a href="https://www.youtube.com/@medhavi-ai" target="_blank" rel="noopener noreferrer" aria-label="YouTube" style="color:var(--muted);text-decoration:none;">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M21.8 8.001a2.75 2.75 0 0 0-1.94-1.94C18.2 6 12 6 12 6s-6.2 0-7.86.06A2.75 2.75 0 0 0 2.2 8.001C2 9.66 2 12 2 12s0 2.34.2 3.999a2.75 2.75 0 0 0 1.94 1.94C5.8 18 12 18 12 18s6.2 0 7.86-.06a2.75 2.75 0 0 0 1.94-1.94C22 14.34 22 12 22 12s0-2.34-.2-3.999zM10 15.5v-7l6 3.5-6 3.5z" fill="currentColor"/></svg>
+      </a>
+      <a href="https://x.com/medhavi_ai" target="_blank" rel="noopener noreferrer" aria-label="Twitter" style="color:var(--muted);text-decoration:none;">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M22.46 6c-.77.35-1.6.59-2.47.7a4.3 4.3 0 0 0 1.88-2.37 8.59 8.59 0 0 1-2.72 1.04A4.28 4.28 0 0 0 12 9.5c0 .34.04.67.1.99A12.13 12.13 0 0 1 3.1 5.1a4.28 4.28 0 0 0 1.32 5.7c-.7-.02-1.36-.21-1.94-.53v.05a4.28 4.28 0 0 0 3.43 4.19c-.33.09-.68.14-1.04.14-.25 0-.5-.02-.74-.07a4.28 4.28 0 0 0 4 2.98A8.6 8.6 0 0 1 2 19.54c-.29 0-.57-.02-.85-.05A12.13 12.13 0 0 0 8.29 21.5c7.55 0 11.68-6.26 11.68-11.68 0-.18-.01-.36-.02-.54A8.18 8.18 0 0 0 24 4.59a8.36 8.36 0 0 1-2.54.7z" fill="currentColor"/></svg>
+      </a>
+      <a href="https://www.instagram.com/ai_medhavi/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style="color:var(--muted);text-decoration:none;">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="6" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17" cy="7" r="1.5" fill="currentColor"/></svg>
+      </a>
+    </div>
     <div style="text-align:center;color:var(--muted);font-size:.9rem;padding:0.5rem 0;">© 2025 Medhavi-AI. All Rights Reserved.</div>
   </footer>
 
-  <script>
-    // Mobile nav toggle
-    const navToggle = document.querySelector('.nav-toggle');
-    const mobileMenu = document.getElementById('mobileMenu');
-    const menu = document.getElementById('primary-menu');
-    navToggle && navToggle.addEventListener('click', ()=>{
-      const expanded = navToggle.getAttribute('aria-expanded') === 'true';
-      navToggle.setAttribute('aria-expanded', String(!expanded));
-      if(mobileMenu) mobileMenu.classList.toggle('open');
-    });
-
-    // Smooth scroll for internal links
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click', function(e){
-        const target = document.querySelector(this.getAttribute('href'));
-        if(target){
-          e.preventDefault();
-          target.scrollIntoView({behavior:'smooth',block:'start'});
-          // close mobile menu
-          if(window.innerWidth < 900 && mobileMenu) mobileMenu.classList.remove('open');
-        }
-      })
-    })
-
-    // About Us expand/collapse
-    const readFullStory = document.getElementById('read-full-story');
-    if(readFullStory) {
-      readFullStory.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.getElementById('about-short').style.display = 'none';
-        document.getElementById('about-full').style.display = 'block';
-        // scroll into view for better ux on small screens
-        document.getElementById('about-full').scrollIntoView({behavior:'smooth',block:'start'});
-      });
-    }
-
-    // Improve focus outlines for accessibility
-    document.addEventListener('keyup', (e) => {
-      if(e.key === 'Tab') document.documentElement.classList.add('user-is-tabbing');
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
