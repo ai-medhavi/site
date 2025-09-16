@@ -18,6 +18,14 @@
       --gap:1.25rem;
       --header-h:64px;
       --container-padding:2rem;
+      --border-color: #eee;
+    }
+    html[data-theme='dark'] {
+      --bg: #121212;
+      --fg: #ffffff;
+      --muted: #aaa;
+      --accent: #fff;
+      --border-color: #333;
     }
     *{box-sizing:border-box}
     html,body{height:100%}
@@ -36,7 +44,7 @@
 
     /* NAVBAR */
     header{
-      position:fixed;top:0;left:0;width:100%;height:var(--header-h);background:var(--bg);border-bottom:1px solid #eee;z-index:1000;display:flex;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,0.03);
+      position:fixed;top:0;left:0;width:100%;height:var(--header-h);background:var(--bg);border-bottom:1px solid var(--border-color);z-index:1000;display:flex;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,0.03);
     }
     main{padding-top:calc(var(--header-h) + 8px);} /* keep space for fixed header */
 
@@ -49,6 +57,24 @@
     nav a{color:var(--fg);text-decoration:none;font-weight:600}
 
     .nav-toggle{display:none;border:0;background:transparent;font-size:1rem;padding:.5rem}
+
+    .theme-toggle {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--fg);
+    }
+    .theme-toggle svg {
+      width: 24px;
+      height: 24px;
+    }
+    .theme-toggle .icon-dark { display: none; }
+    html[data-theme='dark'] .theme-toggle .icon-light { display: none; }
+    html[data-theme='dark'] .theme-toggle .icon-dark { display: block; }
 
     /* HERO */
     .hero{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2.5rem 1rem 3rem;min-height:calc(100vh - var(--header-h));}
@@ -70,7 +96,7 @@
     .section p.lead{margin:0 0 1rem;color:var(--muted)}
 
     .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
-    .card{border:1px solid #eee;padding:1.25rem;border-radius:12px;display:flex;flex-direction:column;justify-content:space-between}
+    .card{border:1px solid var(--border-color);padding:1.25rem;border-radius:12px;display:flex;flex-direction:column;justify-content:space-between}
     .card h4{margin:0 0 .5rem}
     .card small{display:block;color:var(--muted);margin-bottom:.5rem}
     .who{margin-top:.5rem;color:var(--muted);font-size:.95rem}
@@ -80,10 +106,10 @@
     /* ABOUT */
     .about{display:flex;gap:2rem;align-items:flex-start}
     .about .text{flex:1}
-    .about aside{width:300px;border-left:1px dashed #eee;padding-left:1rem;color:var(--muted)}
+    .about aside{width:300px;border-left:1px dashed var(--border-color);padding-left:1rem;color:var(--muted)}
 
     /* FOOTER */
-    footer{border-top:1px solid #eee;padding:2rem 0;margin-top:2rem}
+    footer{border-top:1px solid var(--border-color);padding:2rem 0;margin-top:2rem}
     .footer-grid{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 
     /* Small screens */
@@ -98,7 +124,7 @@
       .nav-toggle{display:block}
       .cards{grid-template-columns:1fr}
       .about{flex-direction:column}
-      .about aside{width:auto;border-left:0;padding-left:0;border-top:1px dashed #eee;padding-top:1rem}
+      .about aside{width:auto;border-left:0;padding-left:0;border-top:1px dashed var(--border-color);padding-top:1rem}
       .hero{padding:2rem 1rem}
       .hero .logo{max-width:320px}
     }
@@ -115,7 +141,7 @@
     }
 
     /* Mobile nav (simple overlay) */
-    .mobile-menu{position:fixed;top:var(--header-h);left:0;right:0;background:var(--bg);border-top:1px solid #eee;display:none;padding:1rem 1rem;z-index:1001}
+    .mobile-menu{position:fixed;top:var(--header-h);left:0;right:0;background:var(--bg);border-top:1px solid var(--border-color);display:none;padding:1rem 1rem;z-index:1001}
     .mobile-menu.open{display:block}
     .mobile-menu a{display:block;padding:.5rem 0;border-bottom:1px dashed #f1f1f1}
 
@@ -135,7 +161,12 @@
           <li><a href="#home">Home</a></li>
           <li><a href="#workshops">Workshops</a></li>
           <li><a href="#about">About Us</a></li>
-
+          <li>
+            <button class="theme-toggle" id="theme-toggle" title="Toggles light & dark" aria-label="auto" aria-live="polite">
+              <svg class="icon-light" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm-.707 10.607a1 1 0 010-1.414l.707-.707a1 1 0 111.414 1.414l-.707.707a1 1 0 01-1.414 0zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+              <svg class="icon-dark" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+            </button>
+          </li>
         </ul>
       </nav>
     </div>
@@ -298,6 +329,26 @@
     // Improve focus outlines for accessibility
     document.addEventListener('keyup', (e) => {
       if(e.key === 'Tab') document.documentElement.classList.add('user-is-tabbing');
+    });
+
+    // Theme switcher
+    const themeToggle = document.getElementById('theme-toggle');
+    const htmlEl = document.documentElement;
+
+    const savedTheme = localStorage.getItem('theme');
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    if (savedTheme) {
+      htmlEl.setAttribute('data-theme', savedTheme);
+    } else if (systemPrefersDark) {
+      htmlEl.setAttribute('data-theme', 'dark');
+    }
+
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = htmlEl.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      htmlEl.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
     });
   </script>
 </body>
