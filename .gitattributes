@@ -1,0 +1,34 @@
+# Normalize line endings and mark binary files
+# This helps avoid LF/CRLF churn across platforms
+
+# Set default behavior — let Git handle text files automatically
+* text=auto
+
+# Explicit text files (ensure normalized to LF in the repo, converted to native on checkout)
+*.html text
+*.css text
+*.js text
+*.json text
+*.md text
+*.svg text
+*.yml text
+*.yaml text
+*.txt text
+*.xml text
+
+# Binary files
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+
+# Treat everything under assets/ as binary to avoid accidental normalization
+/assets/** binary
+
+# Force LF for shell scripts and other POSIX text files
+*.sh text eol=lf
+
+# Keep PowerShell scripts in CRLF on Windows
+*.ps1 text eol=crlf
