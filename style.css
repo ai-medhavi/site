@@ -87,18 +87,26 @@ html[data-theme='dark'] .nav-toggle {
 html[data-theme='dark'] .theme-toggle .icon-light { display: none; }
 html[data-theme='dark'] .theme-toggle .icon-dark { display: block; }
 
-/* HERO */
-.hero{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2.5rem 1rem 3rem;min-height:calc(100vh - var(--header-h));}
+.hero{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:6rem 6rem 6rem;min-height:calc(50vh - var(--header-h));}
 
-.hero .logo{width:100%;max-width:420px;height:auto;border-radius:20px;margin:0 auto 1.25rem auto;display:flex;align-items:center;justify-content:center;background:transparent}
-.hero .logo img{width:100%;height:auto;display:block;object-fit:contain}
+.hero .logo{width:100%;max-width:360px;max-height:320px;height:auto;border-radius:20px;margin:0 auto 0.9rem auto;display:flex;align-items:center;justify-content:center;background:transparent}
+.hero .logo img{width:100%;max-height:260px;height:auto;display:block;object-fit:contain}
 
-.hero h2{font-size:clamp(18px,2.4vw,26px);margin:0 0 .5rem;font-weight:700}
+.hero h2{font-size:clamp(18px,2.2vw,24px);margin:0 0 .5rem;font-weight:700}
 .hero p{margin:0 0 1rem;color:var(--muted)}
 
-.cta{display:flex;gap:.75rem;flex-wrap:wrap;justify-content:center;align-items:center;margin-top:1.25rem}
+/* Hero tagline split into three parts on mobile */
+.hero-tagline{display:inline-flex;align-items:center;gap:.5rem;margin-top:5pt}
+.hero-tagline .tag-line1,.hero-tagline .tag-arrow,.hero-tagline .tag-line3{display:inline}
+
+@media (max-width:600px){
+  .hero-tagline{flex-direction:column;gap:0.25rem}
+  .hero-tagline .tag-arrow{font-size:1.1rem}
+}
+
+.cta{display:flex;gap:1.5rem;flex-wrap:wrap;justify-content:center;align-items:center;margin-top:1.25rem}
 .btn{border:1px solid var(--fg);background:transparent;color:var(--fg);padding:.55rem .9rem;border-radius:8px;font-weight:700;text-decoration:none}
-.cta{display:flex;gap:.75rem;flex-wrap:wrap;justify-content:center;align-items:center;margin:0.1rem auto 0 auto;}
+.cta{display:flex;gap:1.5rem;flex-wrap:wrap;justify-content:center;align-items:center;margin:0.1rem auto 0 auto;}
 .btn.secondary{background:var(--fg);color:var(--bg)}
 
 /* WORKSHOPS */
@@ -166,3 +174,9 @@ footer{border-top:1px solid var(--border-color);padding:2rem 0;margin-top:2rem}
 .mobile-menu{position:fixed;top:var(--header-h);left:0;right:0;background:var(--bg);border-top:1px solid var(--border-color);display:none;padding:1rem 1rem;z-index:1001}
 .mobile-menu.open{display:block}
 .mobile-menu a{display:block;padding:.5rem 0;border-bottom:1px dashed #f1f1f1}
+
+/* Slightly larger hero image for desktop view */
+@media (min-width:1000px){
+  .hero .logo{max-width:420px;max-height:380px;margin-top:-3.5rem}
+  .hero .logo img{max-height:320px}
+}
